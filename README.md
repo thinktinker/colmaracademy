@@ -14,3 +14,13 @@
     git push -u origin main
 
     ```
+
+2. In the event that the URL repo is set wrongly, use the following command to set the correct url:
+
+    ```bash
+    
+    git remote set-url origin https://github.com/thinktinker/colmaracademy.git
+    git remote -v
+    git push
+
+    ```
