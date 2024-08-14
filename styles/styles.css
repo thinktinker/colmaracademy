@@ -1,0 +1,108 @@
+/* import font from Google CDN */
+@import url('href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Source+Sans+Pro:wght@300;400&display=swap"');
+
+/* Reset CSS */
+*{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+/** Start of Desktop Section **/
+/** ************************ **/
+
+/* Set up the navbar for the desktop */
+.desktop-nav{
+    grid-column: full--start / full--end;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.desktop-nav > a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Set up logo styles */
+.logo{
+    height: 2rem;
+    width: auto;
+    padding-left: 1.5rem;
+}
+
+.logo-name{
+    font-size: 1rem;
+    text-transform: uppercase;    
+}
+
+.logo-name-bold{
+    font-weight: bold;
+    color: #484848;
+}
+
+.logo-name-thin{
+    font-weight: 400;
+    color: #aaa;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+/* Set up navigation links' styles */
+.nav-link{
+    display: inline-block;
+    text-decoration: none;
+    color: #828282;
+    font-size: 0.8rem;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 1rem;
+}
+
+.nav-item:last-child{
+    margin-right: 1.5rem;
+}
+
+/** ********************** **/
+/** End of Desktop Section **/
+
+
+/** Start of Mobile Section **/
+/** *********************** **/
+
+.mobile-nav{
+    display: none;
+}
+
+/* if the width of screen is 640px, aka 40rem */
+@media screen and (max-width: 40rem ) {
+
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 4rem;
+    }
+
+    .desktop-nav{
+        display: none;
+    }
+}
+
+/* *********************** */
+/** End of Mobile Section **/
