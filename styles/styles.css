@@ -196,7 +196,7 @@ html, body{
 .event-block img{
     width: 100%;
     height: auto;
-    padding: 1rem
+    padding: 1rem;
 }
 
 .event-block-content{
@@ -227,6 +227,49 @@ html, body{
 
 .event-block:last-child{
 	background-color:#cecbcb;
+}
+
+/* Hide events mobile */
+.events-mobile{
+    display: none;
+}
+
+footer{
+    display: flex;
+    font-size: 0.8rem;
+    grid-column: full--start/full--end;
+    color: #303646;
+    padding: 1rem 0 1.5rem 1.5rem;
+}
+
+footer p{
+    margin-right: auto;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    margin-right: 1.5rem;
+}
+
+footer ul li:not(:last-child){
+    margin-right: 1rem;
+}
+
+footer a:link{
+    text-decoration: none;
+    color: #303646;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: rgba(131, 131, 131, 0.5);
+}
+
+footer a:active,
+footer a:visited{
+    text-decoration: none;
+    color: #303646;
 }
 
 /** ********************** **/
@@ -320,14 +363,44 @@ html, body{
         background-color: rgb(72, 72, 72, 0.5);
     }
 
-    /* TODO: What should I do to hide the banner for 'start practiciing' */
+    /* Hide desktop version of practice */
     .practice{
         display: none;
     }
 
-    /* TODO: What do I do to remove the addtional space created for events class */
     .events{
-        padding-top: 0;
+        display: none;
+    }
+
+    .events-mobile{
+        display: grid;
+        padding: 1rem;
+    }
+    
+    .events-mobile .event-block{
+        grid-template-columns: 1fr;
+    }
+
+    .events-mobile .event-block img{
+        padding: 0;
+    }
+
+    .events-mobile .event-block-content{
+        padding: 2rem 0 2rem 1rem;
+        margin: 0;
+    }
+
+    footer{
+        padding-top: 1.5rem;
+        border: 1px solid black;
+    }
+
+    footer p{
+        padding: 1rem 0;
+    }
+
+    footer ul{
+        display: none;
     }
 }
 
