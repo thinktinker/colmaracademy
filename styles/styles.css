@@ -256,9 +256,13 @@ html, body{
     }
 
     .container{
-        max-width: 100dvw;
+        /* max-width: 100dvw; */
         /* display: grid; */
         /* grid-template-columns: 1fr; */
+
+        display: flex;              /* !! ADDED */
+        flex-direction: column;     /* !! ADDED */
+        height: 100%;               /* !! ADDED */
     }
 
     .header-picture{
@@ -267,11 +271,19 @@ html, body{
 
     .header-picture img{
         padding: 0;
+
+        width: 100%;                /* !! ADDED */
+        object-fit: cover;          /* !! ADDED: Ensures the image covers the entire space without distortion */
     }
 
     .header-content{
-        display: flex;
-        grid-column: full--start / full--end;
+        /* display: flex;                           /* !! REMOVED */
+        grid-column: full--start / full--end;       /* !! REMOVED */
+        
+        display: flex;                              /* !! ADDED */
+        flex-direction: column;                     /* !! ADDED */
+        flex-grow: 1;                               /* !! ADDED */
+
         padding: 2rem 1rem 2rem 1rem;
     }
 
