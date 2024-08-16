@@ -265,20 +265,15 @@ html, body{
         height: 100%;               /* !! ADDED */
     }
 
-    .header-picture{
-        grid-column: full--start / full--end;
-    }
-
     .header-picture img{
         padding: 0;
-
         width: 100%;                /* !! ADDED */
         object-fit: cover;          /* !! ADDED: Ensures the image covers the entire space without distortion */
     }
 
     .header-content{
-        /* display: flex;                           /* !! REMOVED */
-        grid-column: full--start / full--end;       /* !! REMOVED */
+        /* display: flex; */                        /* !! REMOVED */
+        /* grid-column: full--start / full--end; */ /* !! REMOVED */
         
         display: flex;                              /* !! ADDED */
         flex-direction: column;                     /* !! ADDED */
@@ -323,6 +318,16 @@ html, body{
         color: #fff;
         text-decoration: none;
         background-color: rgb(72, 72, 72, 0.5);
+    }
+
+    /* TODO: What should I do to hide the banner for 'start practiciing' */
+    .practice{
+        display: none;
+    }
+
+    /* TODO: What do I do to remove the addtional space created for events class */
+    .events{
+        padding-top: 0;
     }
 }
 
