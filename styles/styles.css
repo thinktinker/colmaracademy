@@ -4,27 +4,242 @@
 /* Universal selector (*) targets every element (regardless tag, class, ID) */
 
 /* TODO */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px dashed #ccc; */
+}
+
+:root{
+    --white: #fff;
+    --main-link-color: #484848;
+    --secondary-link-color: #3434c6;
+}
+
+html{
+    font-size: 16px;        /* 16 px used on this page refers to 1 rem */
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{ /* grid system to split our document into 2 colums, 6 rows */
+    display: grid;
+    grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
+    grid-template-rows: repeat(6, min-content);
+}
 
 /** Start of Desktop Section **/
 /** ************************ **/
 
 /* Set up the navbar for the desktop */
+nav{
+    grid-column: full-start / full-end;     /* This property grid-column is managed by: .container */
+    display: flex;                          /* What is display: flex managing? It is managing itself */
+    justify-content: space-between;         /* justify-content is used along-side display:flex */
+    height: 4rem;
+    background-color: var(--white);
+}
 
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    align-content: center;
+    padding-right: 1rem;
+}
+
+nav ul li:last-child{
+    padding-right: 1.5rem;
+}
+
+nav ul li a{
+    font-size: 0.75rem;
+}
+
+nav > a{                                    /* targets the logo's hyperlink */
+    display: flex;
+    align-items: center;
+}
 
 /* Set up logo styles */
+.logo{
+    height: 2rem;
+    margin-left: 1.5rem;
+}
 
+nav > a > span{
+    text-transform: uppercase;
+    line-height: 2rem;
+}
+
+nav > a > span:first-of-type{
+    font-weight: bold;
+    color: var(--main-link-color);
+}
+
+nav > a > span:last-of-type{
+    font-weight: lighter;
+    color: #aaa;
+}
 
 /* Set up navigation links' styles */
-
+/* TODO - create hover effects */
 
 /* Set up header area */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d8d8d8;
+}
 
+.imgcontainer{
+    padding: 2rem 1.5rem;
+}
+
+header > img{
+    max-width: 100%;
+    height: auto;
+}
+
+header > div{
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    justify-content: space-evenly;
+    padding-right: 2rem;
+}
+
+header > div > h1{
+    font-size: xx-large;
+}
+
+header > div > h2{
+    font-size: large;
+}
+
+header > div > a{
+    display: block;
+    background-color: var(--main-link-color);
+    color: var(--white);
+    padding: 0.5rem 0;
+    text-align: center;
+}
 
 /* hover effect for call to action link */
-
+/* TODO hover effect for the CTA button */
 
 /* Set up practice section */
+.practice{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
+.practice > .imgcontainer > img{
+    max-width: 100%;
+    height: auto;
+}
+
+.practice > .practice-text{
+    padding: 0 1.5rem
+}
+
+.practice > .practice-text > h1{
+    font-size: xx-large;
+    padding-bottom: 1.5rem;
+}
+
+.practice > .practice-text > p{
+    font-size: small;
+    font-weight: lighter;
+}
+
+.practice > .practice-text > p > span{
+    display: block;
+    margin: 2rem 0;  
+}
+
+/* Set up Events section */
+.events{
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    border-left: 1px solid #e7e7e7;;
+}
+
+.events .events-block{
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 1rem;
+}
+
+.events img{
+    max-width: 100%;
+    height: auto;
+}
+
+.events .events-text{
+    margin-left: 1rem;
+    height: 100%;
+    align-content: center;
+}
+
+.events .events-text h3{
+    font-size: large;
+}
+
+.events .events-text p{
+    display: block;
+    font-size: small;
+    font-weight: lighter;
+    padding-top: 0.5rem;
+}
+
+.events .events-text a{
+    display: block;
+    font-size: small;
+    color: var(--secondary-link-color);
+    padding-top: 0.5rem;
+}
+
+.events .events-block:last-child{
+    background-color: #d8d8d8;
+}
+
+/* Set up footer section */
+footer{
+    grid-column: full-start/full-end;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 5rem;      /* top, left & right, bottom */
+    border: 1px solid #e7e7e7;
+    font-size: x-small;
+    color: var(--main-link-color);
+}
+
+footer ul{
+    display: flex;
+    list-style: none;
+}
+
+footer ul li{
+    margin-right: 0.5rem;
+}
+
+/* TODO setting the hover effect for terms and privacy */
 
 /* Hide events mobile */
 
