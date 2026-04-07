@@ -241,7 +241,16 @@ footer ul li{
 
 /* TODO setting the hover effect for terms and privacy */
 
+/* Hide nav-mobile */
+#nav-mobile{
+    display: none;
+}
+
+
 /* Hide events mobile */
+.events > .events-block > .events-img-mobile{
+    display: none;
+}
 
 
 /** ********************** **/
@@ -256,6 +265,94 @@ footer ul li{
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
     
+    /* hide the desktop navigation */
+    nav, 
+    .practice, 
+    .events > .events-block > .events-img-desktop{
+        display: none;
+    }
+
+    .events > .events-block > .events-img-mobile{
+        display: block;
+    }
+
+    /* display the mobile navigation */
+    #nav-mobile{
+        grid-column: full-start/full-end;
+        display: flex;
+        height: 4rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* header area (hero hero section */
+    header{
+        display: grid;
+        grid-column: full-start/full-end;
+    }
+
+    .imgcontainer{
+        padding: 0;
+    }
+
+    header > div{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    header > div > h1{
+        padding-bottom: 2rem;
+    }
+
+    header > div > h2{
+        padding-bottom: 1.5rem;
+    }
+
+    /* events area */
+    .events{
+        display: grid;
+        grid-column: full-start/full-end;
+    }
+
+    .events > .events-block{
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+
+    .events > .events-block:nth-child(2),
+    .events > .events-block:last-child{
+        padding-top: 3rem;
+    }
+
+    .events > .events-block:last-child{
+        background-color: var(--white);
+    }
+
+    .events > .events-block > .events-text{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .events > .events-block > .events-text > h3{
+        padding-top: 1.5rem;
+    }
+
+    footer{
+        font-size: small;
+        padding-top: 1.5rem;
+    }
+
+    footer ul{
+        display: none;
+    }
+
+    footer p{
+        padding: 1rem 0;
+    }
 
 }
 
